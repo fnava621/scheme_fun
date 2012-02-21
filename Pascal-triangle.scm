@@ -1,4 +1,3 @@
-
 ;;Returns specific  values for pascal triangle for that row and column.  Row and column start at 0 0)
 (define (pascal-triangle row column)
   (cond ((or (= row column) (= column 0) 1))
@@ -15,7 +14,7 @@
   (define (iter row column result)
     (cond ((= column 0) (append (list 1) result))
           (else (iter row (- column 1) 
-		      (cons (pascal row column) result)))))
+		      (cons (pascal-triangle row column) result)))))
   (iter row row nil))
 
 ;; Ex (pascal-row-coumn 2) => (1 2 1)
